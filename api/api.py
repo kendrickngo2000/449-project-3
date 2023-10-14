@@ -75,7 +75,7 @@ def register(new_register: UserRegister, request: Request, db: sqlite3.Connectio
                 VALUES (:username, :role)
         """, {"username": new_user["username"], "role": role})
 
-    claims = generate_claims(new_user["username"], new_user["student_id"], new_user["roles"])
+    claims = generate_claims(new_user["username"], new_user["roles"])
     
     # Commit the changes
     db.commit()
@@ -121,6 +121,6 @@ def signin(user_sign_in: UserSignIn, request: Request, db: sqlite3.Connection = 
     for role in user_roles:
         roles.append(role["role"])
 
-    claims = generate_claims(user_info["username"], user_info["student_id"], roles)
+    claims = generate_claims(user_info["username"], roles)
     
     return claims
