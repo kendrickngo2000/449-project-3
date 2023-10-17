@@ -3,27 +3,297 @@
     "version": 3,
     "endpoints": [
       {
-        "endpoint": "/api/enrollment_test",
+        "endpoint": "/api/register",
+        "method": "POST",
+        "backend": [
+            {
+            "url_pattern": "/register",
+            "method": "POST",
+            "host": [
+                "http://localhost:5200"
+            ],
+            "extra_config": {
+              "backend/http": {
+                  "return_error_details": "backend"
+            }
+          }
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/signin",
+        "method": "POST",
+        "backend": [
+            {
+            "url_pattern": "/signin",
+            "method": "POST",
+            "host": [
+                "http://localhost:5200"
+            ],
+            "extra_config": {
+              "backend/http": {
+                  "return_error_details": "backend"
+            }
+          }
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/all_classes",
         "method": "GET",
         "backend": [
-          {
-            "url_pattern": "/enrollment_test",
+            {
+            "url_pattern": "/all_classes",
             "method": "GET",
             "host": [
-              "http://localhost:5100"
+                "http://localhost:5100"
             ]
           }
         ]
       },
       {
-        "endpoint": "/api/auth_test",
+        "endpoint": "/api/student_details/{student_username}",
         "method": "GET",
         "backend": [
-          {
-            "url_pattern": "/auth_test",
+            {
+            "url_pattern": "/student_details/{student_username}",
             "method": "GET",
             "host": [
-              "http://localhost:5200"
+                "http://localhost:5100"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/student_enrollment/{student_username}",
+        "method": "GET",
+        "backend": [
+            {
+            "url_pattern": "/student_enrollment/{student_username}",
+            "method": "GET",
+            "host": [
+                "http://localhost:5100"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/waitlist",
+        "method": "GET",
+        "backend": [
+            {
+            "url_pattern": "/waitlist",
+            "method": "GET",
+            "host": [
+                "http://localhost:5100"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/student/available_classes",
+        "method": "GET",
+        "backend": [
+            {
+            "url_pattern": "/student/available_classes",
+            "method": "GET",
+            "host": [
+                "http://localhost:5100"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/student/enroll_in_class/student/{student_username}/class/{class_code}/section/{section_number}",
+        "method": "POST",
+        "backend": [
+            {
+            "url_pattern": "/student/enroll_in_class/student/{student_username}/class/{class_code}/section/{section_number}",
+            "method": "POST",
+            "host": [
+                "http://localhost:5100"
+            ],"extra_config": {
+                "backend/http": {
+                    "return_error_details": "backend"
+                }
+            }
+
+            }
+        ]
+      },
+      {
+        "endpoint": "/api/student/drop_class/student/{student_username}/class/{class_code}/section/{section_number}",
+        "method": "DELETE",
+        "backend": [
+            {
+            "url_pattern": "/student/drop_class/student/{student_username}/class/{class_code}/section/{section_number}",
+            "method": "DELETE",
+            "host": [
+                "http://localhost:5100"
+            ],"extra_config": {
+                "backend/http": {
+                    "return_error_details": "backend"
+                }
+            }
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/instructor/enrollment/instructor/{instructor_username}",
+        "method": "GET",
+        "backend": [
+            {
+            "url_pattern": "/instructor/enrollment/instructor/{instructor_username}",
+            "method": "GET",
+            "host": [
+                "http://localhost:5100"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/instructor/dropped/instructor/{instructor_username}/class/{class_code}/section/{section_number}",
+        "method": "GET",
+        "backend": [
+            {
+            "url_pattern": "/instructor/dropped/instructor/{instructor_username}/class/{class_code}/section/{section_number}",
+            "method": "GET",
+            "host": [
+                "http://localhost:5100"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/instructor/drop_student/student/{student_username}/class/{class_code}/section/{section_number}",
+        "method": "DELETE",
+        "backend": [
+            {
+            "url_pattern": "/instructor/drop_student/student/{student_username}/class/{class_code}/section/{section_number}",
+            "method": "DELETE",
+            "host": [
+                "http://localhost:5100"
+            ],
+            "extra_config": {
+              "backend/http": {
+                  "return_error_details": "backend"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/registrar/new_class",
+        "method": "POST",
+        "backend": [
+            {
+            "url_pattern": "/registrar/new_class",
+            "method": "POST",
+            "host": [
+                "http://localhost:5100"
+            ],
+            "extra_config": {
+              "backend/http": {
+                  "return_error_details": "backend"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/registrar/remove_class/code/{class_code}/section/{section_number}",
+        "method": "DELETE",
+        "backend": [
+            {
+            "url_pattern": "/registrar/remove_class/code/{class_code}/section/{section_number}",
+            "method": "DELETE",
+            "host": [
+                "http://localhost:5100"
+            ],
+            "extra_config": {
+              "backend/http": {
+                  "return_error_details": "backend"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/registrar/change_instructor/class/{class_code}/section/{section_number}/new_instructor/{instructor_username}",
+        "method": "PATCH",
+        "backend": [
+            {
+            "url_pattern": "/registrar/change_instructor/class/{class_code}/section/{section_number}/new_instructor/{instructor_username}",
+            "method": "PATCH",
+            "host": [
+                "http://localhost:5100"
+            ],
+            "extra_config": {
+              "backend/http": {
+                  "return_error_details": "backend"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/registrar/freeze_enrollment/class/{class_code}/section/{section_number}",
+        "method": "PATCH",
+        "backend": [
+            {
+            "url_pattern": "/registrar/freeze_enrollment/class/{class_code}/section/{section_number}",
+            "method": "PATCH",
+            "host": [
+                "http://localhost:5100"
+            ],
+            "extra_config": {
+              "backend/http": {
+                  "return_error_details": "backend"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/student/waitlist_position/student/{student_username}/class/{class_code}/section/{section_number}",
+        "method": "GET",
+        "backend": [
+            {
+            "url_pattern": "/student/waitlist_position/student/{student_username}/class/{class_code}/section/{section_number}",
+            "method": "GET",
+            "host": [
+                "http://localhost:5100"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/student/remove_from_waitlist/student/{student_username}/class/{class_code}/section/{section_number}",
+        "method": "DELETE",
+        "backend": [
+            {
+            "url_pattern": "/student/remove_from_waitlist/student/{student_username}/class/{class_code}/section/{section_number}",
+            "method": "DELETE",
+            "host": [
+                "http://localhost:5100"
+            ],
+            "extra_config": {
+              "backend/http": {
+                  "return_error_details": "backend"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/instructor/waitlist_for_class/instructor/{instructor_username}/class/{class_code}/section/{section_number}",
+        "method": "GET",
+        "backend": [
+            {
+            "url_pattern": "/instructor/waitlist_for_class/instructor/{instructor_username}/class/{class_code}/section/{section_number}",
+            "method": "GET",
+            "host": [
+                "http://localhost:5100"
             ]
           }
         ]

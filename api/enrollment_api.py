@@ -606,7 +606,7 @@ def student_get_waitlist_position_for_class(student_username: str, class_code: s
             waitlist[waitlist_student_username] = waitlist_timestamp
         
         # Return position on waitlist
-        return f'You are number {get_position_on_waitlist(waitlist, student_username)} on the waitlist'
+        return {"detail": f'You are number {get_position_on_waitlist(waitlist, student_username)} on the waitlist'}
     
     else:
         raise HTTPException(
