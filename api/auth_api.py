@@ -22,11 +22,11 @@ class UserSignIn(BaseModel):
     password: str
 
 class Settings(BaseSettings, env_file=".env", extra="ignore"):
-    database: str
-    logging_config: str
+    auth_database: str
+    auth_logging_config: str
 
 def get_db():
-    with contextlib.closing(sqlite3.connect(settings.database)) as db:
+    with contextlib.closing(sqlite3.connect(settings.auth_database)) as db:
         db.row_factory = sqlite3.Row
         yield db
 
@@ -36,7 +36,11 @@ def get_logger():
 settings = Settings()
 app = FastAPI()
 
-logging.config.fileConfig(settings.logging_config, disable_existing_loggers=False)
+logging.config.fileConfig(settings.auth_logging_config, disable_existing_loggers=False)
+
+@app.get("/auth_test")
+def auth_api_test(db: sqlite3.Connection = Depends(get_db)):
+    return {"Test" : "success"}
 
 
 # Task 1: Register a new user

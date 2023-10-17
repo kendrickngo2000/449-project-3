@@ -1,0 +1,32 @@
+{
+    "$schema": "https://www.krakend.io/schema/v2.4/krakend.json",
+    "version": 3,
+    "endpoints": [
+      {
+        "endpoint": "/api/enrollment_test",
+        "method": "GET",
+        "backend": [
+          {
+            "url_pattern": "/enrollment_test",
+            "method": "GET",
+            "host": [
+              "http://localhost:5100"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/api/auth_test",
+        "method": "GET",
+        "backend": [
+          {
+            "url_pattern": "/auth_test",
+            "method": "GET",
+            "host": [
+              "http://localhost:5200"
+            ]
+          }
+        ]
+      }
+    ]
+  }
