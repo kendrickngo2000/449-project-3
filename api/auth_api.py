@@ -54,6 +54,7 @@ def auth_api_test(db: sqlite3.Connection = Depends(get_db)):
 def register(new_register: UserRegister, request: Request, db: sqlite3.Connection = Depends(get_db)):
 
     new_user = dict(new_register)
+    print(new_register)
     
     username_exists = db.execute("""
                 SELECT *
@@ -79,12 +80,10 @@ def register(new_register: UserRegister, request: Request, db: sqlite3.Connectio
                 VALUES (:username, :role)
         """, {"username": new_user["username"], "role": role})
 
-    claims = generate_claims(new_user["username"], new_user["roles"])
-    
     # Commit the changes
     db.commit()
     
-    return claims
+    return {"detail": "successfully registered"}
 
 # Task 1: Register a new user
 # Example: POST http://localhost:5000/signin
@@ -92,9 +91,8 @@ def register(new_register: UserRegister, request: Request, db: sqlite3.Connectio
 #     "username": "TheRealSamDoe",
 #     "password": "SamyDoeSo123!",
 # }
-@app.post("/signin")
-def signin(user_sign_in: UserSignIn, request: Request, db: sqlite3.Connection = Depends(get_db)):
-    
+@app.post("/login")
+def token_issuer(user_sign_in: UserSignIn, request: Request, db: sqlite3.Connection = Depends(get_db)):    
     user = dict(user_sign_in)
 
     user_info = db.execute("""
@@ -125,6 +123,6 @@ def signin(user_sign_in: UserSignIn, request: Request, db: sqlite3.Connection = 
     for role in user_roles:
         roles.append(role["role"])
 
-    claims = generate_claims(user_info["username"], roles)
+    token = generate_claims(user_info["username"], roles)
     
-    return claims
+    return token

@@ -1,0 +1,153 @@
+[2023-10-18 13:16:03,612] DEBUG in httpx: load_ssl_context verify=True cert=None trust_env=True http2=False
+[2023-10-18 13:16:03,670] DEBUG in httpx: load_verify_locations cafile='/etc/ssl/certs/ca-certificates.crt'
+[2023-10-18 13:16:03,760] DEBUG in httpcore.connection: connect_tcp.started host='localhost' port=5200 local_address=None timeout=5.0 socket_options=None
+[2023-10-18 13:16:03,769] DEBUG in httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd58a9708b0>
+[2023-10-18 13:16:03,769] DEBUG in httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2023-10-18 13:16:03,770] DEBUG in httpcore.http11: send_request_headers.complete
+[2023-10-18 13:16:03,770] DEBUG in httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2023-10-18 13:16:03,770] DEBUG in httpcore.http11: send_request_body.complete
+[2023-10-18 13:16:03,770] DEBUG in httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2023-10-18 13:16:03,911] DEBUG in httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Wed, 18 Oct 2023 20:16:02 GMT'), (b'server', b'uvicorn'), (b'content-length', b'293'), (b'content-type', b'application/json')])
+[2023-10-18 13:16:03,913] INFO in httpx: HTTP Request: POST http://localhost:5200/token-issuer "HTTP/1.1 200 OK"
+[2023-10-18 13:16:03,914] DEBUG in httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2023-10-18 13:16:03,914] DEBUG in httpcore.http11: receive_response_body.complete
+[2023-10-18 13:16:03,914] DEBUG in httpcore.http11: response_closed.started
+[2023-10-18 13:16:03,914] DEBUG in httpcore.http11: response_closed.complete
+[2023-10-18 13:16:03,915] DEBUG in httpcore.connection: close.started
+[2023-10-18 13:16:03,915] DEBUG in httpcore.connection: close.complete
+[2023-10-18 13:16:50,937] DEBUG in httpx: load_ssl_context verify=True cert=None trust_env=True http2=False
+[2023-10-18 13:16:50,945] DEBUG in httpx: load_verify_locations cafile='/etc/ssl/certs/ca-certificates.crt'
+[2023-10-18 13:16:51,023] DEBUG in httpcore.connection: connect_tcp.started host='localhost' port=5200 local_address=None timeout=5.0 socket_options=None
+[2023-10-18 13:16:51,029] DEBUG in httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f5f47c488b0>
+[2023-10-18 13:16:51,030] DEBUG in httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2023-10-18 13:16:51,030] DEBUG in httpcore.http11: send_request_headers.complete
+[2023-10-18 13:16:51,031] DEBUG in httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2023-10-18 13:16:51,031] DEBUG in httpcore.http11: send_request_body.complete
+[2023-10-18 13:16:51,031] DEBUG in httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2023-10-18 13:16:51,175] DEBUG in httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Wed, 18 Oct 2023 20:16:50 GMT'), (b'server', b'uvicorn'), (b'content-length', b'293'), (b'content-type', b'application/json')])
+[2023-10-18 13:16:51,176] INFO in httpx: HTTP Request: POST http://localhost:5200/token-issuer "HTTP/1.1 200 OK"
+[2023-10-18 13:16:51,177] DEBUG in httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2023-10-18 13:16:51,177] DEBUG in httpcore.http11: receive_response_body.complete
+[2023-10-18 13:16:51,177] DEBUG in httpcore.http11: response_closed.started
+[2023-10-18 13:16:51,177] DEBUG in httpcore.http11: response_closed.complete
+[2023-10-18 13:16:51,178] DEBUG in httpcore.connection: close.started
+[2023-10-18 13:16:51,178] DEBUG in httpcore.connection: close.complete
+[2023-10-18 13:17:21,827] DEBUG in httpx: load_ssl_context verify=True cert=None trust_env=True http2=False
+[2023-10-18 13:17:21,837] DEBUG in httpx: load_verify_locations cafile='/etc/ssl/certs/ca-certificates.crt'
+[2023-10-18 13:17:21,960] DEBUG in httpcore.connection: connect_tcp.started host='localhost' port=5200 local_address=None timeout=5.0 socket_options=None
+[2023-10-18 13:17:21,964] DEBUG in httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fc344b60880>
+[2023-10-18 13:17:21,965] DEBUG in httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2023-10-18 13:17:21,966] DEBUG in httpcore.http11: send_request_headers.complete
+[2023-10-18 13:17:21,966] DEBUG in httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2023-10-18 13:17:21,967] DEBUG in httpcore.http11: send_request_body.complete
+[2023-10-18 13:17:21,967] DEBUG in httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2023-10-18 13:17:22,251] DEBUG in httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Wed, 18 Oct 2023 20:17:21 GMT'), (b'server', b'uvicorn'), (b'content-length', b'293'), (b'content-type', b'application/json')])
+[2023-10-18 13:17:22,253] INFO in httpx: HTTP Request: POST http://localhost:5200/token-issuer "HTTP/1.1 200 OK"
+[2023-10-18 13:17:22,254] DEBUG in httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2023-10-18 13:17:22,254] DEBUG in httpcore.http11: receive_response_body.complete
+[2023-10-18 13:17:22,255] DEBUG in httpcore.http11: response_closed.started
+[2023-10-18 13:17:22,255] DEBUG in httpcore.http11: response_closed.complete
+[2023-10-18 13:17:22,256] DEBUG in httpcore.connection: close.started
+[2023-10-18 13:17:22,256] DEBUG in httpcore.connection: close.complete
+[2023-10-18 13:18:35,350] DEBUG in httpx: load_ssl_context verify=True cert=None trust_env=True http2=False
+[2023-10-18 13:18:35,366] DEBUG in httpx: load_verify_locations cafile='/etc/ssl/certs/ca-certificates.crt'
+[2023-10-18 13:18:35,449] DEBUG in httpcore.connection: connect_tcp.started host='localhost' port=5200 local_address=None timeout=5.0 socket_options=None
+[2023-10-18 13:18:35,462] DEBUG in httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f2e833608b0>
+[2023-10-18 13:18:35,463] DEBUG in httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2023-10-18 13:18:35,463] DEBUG in httpcore.http11: send_request_headers.complete
+[2023-10-18 13:18:35,463] DEBUG in httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2023-10-18 13:18:35,463] DEBUG in httpcore.http11: send_request_body.complete
+[2023-10-18 13:18:35,463] DEBUG in httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2023-10-18 13:18:35,465] DEBUG in httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Wed, 18 Oct 2023 20:18:34 GMT'), (b'server', b'uvicorn'), (b'content-length', b'16'), (b'content-type', b'application/json')])
+[2023-10-18 13:18:35,466] INFO in httpx: HTTP Request: POST http://localhost:5200/token-issuer "HTTP/1.1 200 OK"
+[2023-10-18 13:18:35,466] DEBUG in httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2023-10-18 13:18:35,466] DEBUG in httpcore.http11: receive_response_body.complete
+[2023-10-18 13:18:35,467] DEBUG in httpcore.http11: response_closed.started
+[2023-10-18 13:18:35,467] DEBUG in httpcore.http11: response_closed.complete
+[2023-10-18 13:18:35,468] DEBUG in httpcore.connection: close.started
+[2023-10-18 13:18:35,468] DEBUG in httpcore.connection: close.complete
+[2023-10-18 13:19:07,125] DEBUG in httpx: load_ssl_context verify=True cert=None trust_env=True http2=False
+[2023-10-18 13:19:07,132] DEBUG in httpx: load_verify_locations cafile='/etc/ssl/certs/ca-certificates.crt'
+[2023-10-18 13:19:07,201] DEBUG in httpcore.connection: connect_tcp.started host='localhost' port=5200 local_address=None timeout=5.0 socket_options=None
+[2023-10-18 13:19:07,204] DEBUG in httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f58d765c8b0>
+[2023-10-18 13:19:07,204] DEBUG in httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2023-10-18 13:19:07,205] DEBUG in httpcore.http11: send_request_headers.complete
+[2023-10-18 13:19:07,205] DEBUG in httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2023-10-18 13:19:07,205] DEBUG in httpcore.http11: send_request_body.complete
+[2023-10-18 13:19:07,205] DEBUG in httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2023-10-18 13:19:07,207] DEBUG in httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Wed, 18 Oct 2023 20:19:06 GMT'), (b'server', b'uvicorn'), (b'content-length', b'16'), (b'content-type', b'application/json')])
+[2023-10-18 13:19:07,208] INFO in httpx: HTTP Request: POST http://localhost:5200/token-issuer "HTTP/1.1 200 OK"
+[2023-10-18 13:19:07,208] DEBUG in httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2023-10-18 13:19:07,208] DEBUG in httpcore.http11: receive_response_body.complete
+[2023-10-18 13:19:07,208] DEBUG in httpcore.http11: response_closed.started
+[2023-10-18 13:19:07,209] DEBUG in httpcore.http11: response_closed.complete
+[2023-10-18 13:19:07,210] DEBUG in httpcore.connection: close.started
+[2023-10-18 13:19:07,210] DEBUG in httpcore.connection: close.complete
+[2023-10-18 13:19:28,997] DEBUG in httpx: load_ssl_context verify=True cert=None trust_env=True http2=False
+[2023-10-18 13:19:29,038] DEBUG in httpx: load_verify_locations cafile='/etc/ssl/certs/ca-certificates.crt'
+[2023-10-18 13:19:29,129] DEBUG in httpcore.connection: connect_tcp.started host='localhost' port=5200 local_address=None timeout=5.0 socket_options=None
+[2023-10-18 13:19:29,139] DEBUG in httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7facb3c5c8e0>
+[2023-10-18 13:19:29,140] DEBUG in httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2023-10-18 13:19:29,141] DEBUG in httpcore.http11: send_request_headers.complete
+[2023-10-18 13:19:29,141] DEBUG in httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2023-10-18 13:19:29,143] DEBUG in httpcore.http11: send_request_body.complete
+[2023-10-18 13:19:29,143] DEBUG in httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2023-10-18 13:19:29,151] DEBUG in httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Wed, 18 Oct 2023 20:19:28 GMT'), (b'server', b'uvicorn'), (b'content-length', b'60'), (b'content-type', b'application/json')])
+[2023-10-18 13:19:29,152] INFO in httpx: HTTP Request: POST http://localhost:5200/token-issuer "HTTP/1.1 200 OK"
+[2023-10-18 13:19:29,153] DEBUG in httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2023-10-18 13:19:29,153] DEBUG in httpcore.http11: receive_response_body.complete
+[2023-10-18 13:19:29,153] DEBUG in httpcore.http11: response_closed.started
+[2023-10-18 13:19:29,154] DEBUG in httpcore.http11: response_closed.complete
+[2023-10-18 13:19:29,155] DEBUG in httpcore.connection: close.started
+[2023-10-18 13:19:29,155] DEBUG in httpcore.connection: close.complete
+[2023-10-18 13:19:53,108] DEBUG in httpx: load_ssl_context verify=True cert=None trust_env=True http2=False
+[2023-10-18 13:19:53,115] DEBUG in httpx: load_verify_locations cafile='/etc/ssl/certs/ca-certificates.crt'
+[2023-10-18 13:19:53,201] DEBUG in httpcore.connection: connect_tcp.started host='localhost' port=5200 local_address=None timeout=5.0 socket_options=None
+[2023-10-18 13:19:53,206] DEBUG in httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f9702c488b0>
+[2023-10-18 13:19:53,207] DEBUG in httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2023-10-18 13:19:53,207] DEBUG in httpcore.http11: send_request_headers.complete
+[2023-10-18 13:19:53,207] DEBUG in httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2023-10-18 13:19:53,208] DEBUG in httpcore.http11: send_request_body.complete
+[2023-10-18 13:19:53,208] DEBUG in httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2023-10-18 13:19:53,335] DEBUG in httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Wed, 18 Oct 2023 20:19:52 GMT'), (b'server', b'uvicorn'), (b'content-length', b'293'), (b'content-type', b'application/json')])
+[2023-10-18 13:19:53,335] INFO in httpx: HTTP Request: POST http://localhost:5200/token-issuer "HTTP/1.1 200 OK"
+[2023-10-18 13:19:53,336] DEBUG in httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2023-10-18 13:19:53,336] DEBUG in httpcore.http11: receive_response_body.complete
+[2023-10-18 13:19:53,336] DEBUG in httpcore.http11: response_closed.started
+[2023-10-18 13:19:53,336] DEBUG in httpcore.http11: response_closed.complete
+[2023-10-18 13:19:53,337] DEBUG in httpcore.connection: close.started
+[2023-10-18 13:19:53,338] DEBUG in httpcore.connection: close.complete
+[2023-10-18 13:20:35,225] DEBUG in httpx: load_ssl_context verify=True cert=None trust_env=True http2=False
+[2023-10-18 13:20:35,235] DEBUG in httpx: load_verify_locations cafile='/etc/ssl/certs/ca-certificates.crt'
+[2023-10-18 13:20:35,297] DEBUG in httpcore.connection: connect_tcp.started host='localhost' port=5200 local_address=None timeout=5.0 socket_options=None
+[2023-10-18 13:20:35,303] DEBUG in httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fb5253648b0>
+[2023-10-18 13:20:35,303] DEBUG in httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2023-10-18 13:20:35,303] DEBUG in httpcore.http11: send_request_headers.complete
+[2023-10-18 13:20:35,303] DEBUG in httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2023-10-18 13:20:35,304] DEBUG in httpcore.http11: send_request_body.complete
+[2023-10-18 13:20:35,304] DEBUG in httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2023-10-18 13:20:35,430] DEBUG in httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Wed, 18 Oct 2023 20:20:35 GMT'), (b'server', b'uvicorn'), (b'content-length', b'293'), (b'content-type', b'application/json')])
+[2023-10-18 13:20:35,432] INFO in httpx: HTTP Request: POST http://localhost:5200/token-issuer "HTTP/1.1 200 OK"
+[2023-10-18 13:20:35,432] DEBUG in httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2023-10-18 13:20:35,432] DEBUG in httpcore.http11: receive_response_body.complete
+[2023-10-18 13:20:35,432] DEBUG in httpcore.http11: response_closed.started
+[2023-10-18 13:20:35,433] DEBUG in httpcore.http11: response_closed.complete
+[2023-10-18 13:20:35,433] DEBUG in httpcore.connection: close.started
+[2023-10-18 13:20:35,433] DEBUG in httpcore.connection: close.complete
+[2023-10-18 13:22:00,404] DEBUG in httpx: load_ssl_context verify=True cert=None trust_env=True http2=False
+[2023-10-18 13:22:00,408] DEBUG in httpx: load_verify_locations cafile='/etc/ssl/certs/ca-certificates.crt'
+[2023-10-18 13:22:00,478] DEBUG in httpcore.connection: connect_tcp.started host='localhost' port=5200 local_address=None timeout=5.0 socket_options=None
+[2023-10-18 13:22:00,480] DEBUG in httpcore.connection: connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fb525366770>
+[2023-10-18 13:22:00,480] DEBUG in httpcore.http11: send_request_headers.started request=<Request [b'POST']>
+[2023-10-18 13:22:00,480] DEBUG in httpcore.http11: send_request_headers.complete
+[2023-10-18 13:22:00,481] DEBUG in httpcore.http11: send_request_body.started request=<Request [b'POST']>
+[2023-10-18 13:22:00,481] DEBUG in httpcore.http11: send_request_body.complete
+[2023-10-18 13:22:00,481] DEBUG in httpcore.http11: receive_response_headers.started request=<Request [b'POST']>
+[2023-10-18 13:22:00,612] DEBUG in httpcore.http11: receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Wed, 18 Oct 2023 20:21:59 GMT'), (b'server', b'uvicorn'), (b'content-length', b'293'), (b'content-type', b'application/json')])
+[2023-10-18 13:22:00,612] INFO in httpx: HTTP Request: POST http://localhost:5200/token-issuer "HTTP/1.1 200 OK"
+[2023-10-18 13:22:00,612] DEBUG in httpcore.http11: receive_response_body.started request=<Request [b'POST']>
+[2023-10-18 13:22:00,613] DEBUG in httpcore.http11: receive_response_body.complete
+[2023-10-18 13:22:00,613] DEBUG in httpcore.http11: response_closed.started
+[2023-10-18 13:22:00,613] DEBUG in httpcore.http11: response_closed.complete
+[2023-10-18 13:22:00,613] DEBUG in httpcore.connection: close.started
+[2023-10-18 13:22:00,614] DEBUG in httpcore.connection: close.complete

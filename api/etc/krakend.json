@@ -21,11 +21,11 @@
         ]
       },
       {
-        "endpoint": "/api/signin",
+        "endpoint": "/api/login",
         "method": "POST",
         "backend": [
             {
-            "url_pattern": "/signin",
+            "url_pattern": "/login",
             "method": "POST",
             "host": [
                 "http://localhost:5200"
@@ -33,10 +33,22 @@
             "extra_config": {
               "backend/http": {
                   "return_error_details": "backend"
+              }
             }
           }
+        ],
+        "extra_config": {
+          "auth/signer": {
+              "alg": "HS256",
+              "kid": "sim2",
+              "keys_to_sign": [
+                  "access_token",
+                  "refresh_token"
+              ],
+              "jwk_local_path": "symmetric.json",
+              "disable_jwk_security": true
           }
-        ]
+        }
       },
       {
         "endpoint": "/api/all_classes",
@@ -49,7 +61,18 @@
                 "http://localhost:5100"
             ]
           }
-        ]
+        ],
+        "extra_config": {
+          "auth/validator": {
+              "alg": "HS256",
+              "jwk_local_path": "symmetric.json",
+              "roles_key": "roles",
+                    "roles": ["student"],
+              "operation_debug": true,
+              "disable_jwk_security": true,
+              "cache": false
+          }
+        }
       },
       {
         "endpoint": "/api/student_details/{student_username}",
