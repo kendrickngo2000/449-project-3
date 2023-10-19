@@ -19,5 +19,5 @@ python -m pip install 'fastapi[all]'
 
 **3. Start the api**
 ```
-foreman start
+foreman start --formation krakend=1,enrollment_api=3,primary=1,secondary_1=1,secondary_2=1
 ```
