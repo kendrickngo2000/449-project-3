@@ -10,7 +10,7 @@
             "url_pattern": "/register",
             "method": "POST",
             "host": [
-                "http://localhost:5100"
+                "http://localhost:5200"
             ],
             "extra_config": {
               "backend/http": {
@@ -28,7 +28,7 @@
             "url_pattern": "/login",
             "method": "POST",
             "host": [
-                "http://localhost:5100"
+                "http://localhost:5200"
             ],
             "extra_config": {
               "backend/http": {
@@ -58,9 +58,9 @@
             "url_pattern": "/all_classes",
             "method": "GET",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ]
           }
         ],
@@ -84,9 +84,9 @@
             "url_pattern": "/student_details/{student_username}",
             "method": "GET",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ]
           }
         ]
@@ -99,9 +99,9 @@
             "url_pattern": "/student_enrollment/{student_username}",
             "method": "GET",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ]
           }
         ]
@@ -114,9 +114,9 @@
             "url_pattern": "/waitlist",
             "method": "GET",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ]
           }
         ]
@@ -129,9 +129,9 @@
             "url_pattern": "/student/available_classes",
             "method": "GET",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ]
           }
         ]
@@ -144,9 +144,9 @@
             "url_pattern": "/student/enroll_in_class/student/{student_username}/class/{class_code}/section/{section_number}",
             "method": "POST",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ],"extra_config": {
                 "backend/http": {
                     "return_error_details": "backend"
@@ -164,9 +164,9 @@
             "url_pattern": "/student/drop_class/student/{student_username}/class/{class_code}/section/{section_number}",
             "method": "DELETE",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ],"extra_config": {
                 "backend/http": {
                     "return_error_details": "backend"
@@ -183,9 +183,9 @@
             "url_pattern": "/instructor/enrollment/instructor/{instructor_username}",
             "method": "GET",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ]
           }
         ]
@@ -198,9 +198,9 @@
             "url_pattern": "/instructor/dropped/instructor/{instructor_username}/class/{class_code}/section/{section_number}",
             "method": "GET",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ]
           }
         ]
@@ -213,9 +213,9 @@
             "url_pattern": "/instructor/drop_student/student/{student_username}/class/{class_code}/section/{section_number}",
             "method": "DELETE",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ],
             "extra_config": {
               "backend/http": {
@@ -233,9 +233,9 @@
             "url_pattern": "/registrar/new_class",
             "method": "POST",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ],
             "extra_config": {
               "backend/http": {
@@ -253,9 +253,9 @@
             "url_pattern": "/registrar/remove_class/code/{class_code}/section/{section_number}",
             "method": "DELETE",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ],
             "extra_config": {
               "backend/http": {
@@ -273,9 +273,9 @@
             "url_pattern": "/registrar/change_instructor/class/{class_code}/section/{section_number}/new_instructor/{instructor_username}",
             "method": "PATCH",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ],
             "extra_config": {
               "backend/http": {
@@ -293,9 +293,9 @@
             "url_pattern": "/registrar/freeze_enrollment/class/{class_code}/section/{section_number}",
             "method": "PATCH",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ],
             "extra_config": {
               "backend/http": {
@@ -313,9 +313,9 @@
             "url_pattern": "/student/waitlist_position/student/{student_username}/class/{class_code}/section/{section_number}",
             "method": "GET",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ]
           }
         ]
@@ -328,9 +328,9 @@
             "url_pattern": "/student/remove_from_waitlist/student/{student_username}/class/{class_code}/section/{section_number}",
             "method": "DELETE",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ],
             "extra_config": {
               "backend/http": {
@@ -348,9 +348,9 @@
             "url_pattern": "/instructor/waitlist_for_class/instructor/{instructor_username}/class/{class_code}/section/{section_number}",
             "method": "GET",
             "host": [
-                "http://localhost:5200",
-                "http://localhost:5300",
-                "http://localhost:5400"
+                "http://localhost:5100",
+                "http://localhost:5101",
+                "http://localhost:5102"
             ]
           }
         ]

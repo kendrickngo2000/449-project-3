@@ -2,6 +2,7 @@ from collections import OrderedDict
 from typing import List
 from hash import *
 from jwt import *
+import itertools
 
 import contextlib
 import logging.config
@@ -23,24 +24,36 @@ class UserSignIn(BaseModel):
 
 class Settings(BaseSettings, env_file=".env", extra="ignore"):
     auth_database: str
+    auth_secondary_database_1: str
+    auth_secondary_database_2: str
     auth_logging_config: str
-
-def get_db():
-    with contextlib.closing(sqlite3.connect(settings.auth_database)) as db:
-        db.row_factory = sqlite3.Row
-        yield db
-
-def get_logger():
-    return logging.getLogger(__name__)
 
 settings = Settings()
 app = FastAPI()
 
-logging.config.fileConfig(settings.auth_logging_config, disable_existing_loggers=False)
+# List of database paths
+database_paths = [settings.auth_secondary_database_1, settings.auth_secondary_database_2]
 
-@app.get("/auth_test")
-def auth_api_test(db: sqlite3.Connection = Depends(get_db)):
-    return {"Test" : "success"}
+# Create a cycle iterator for the database paths
+database_cycle = itertools.cycle(database_paths)
+
+# Define a function to get a database connection
+def get_primary_db():
+    with contextlib.closing(sqlite3.connect(settings.auth_database)) as db:
+        db.row_factory = sqlite3.Row
+        yield db
+
+def get_secondary_db():
+    db_path = next(database_cycle)
+    with contextlib.closing(sqlite3.connect(db_path)) as db:
+        db.row_factory = sqlite3.Row
+        yield db
+
+
+def get_logger():
+    return logging.getLogger(__name__)
+
+logging.config.fileConfig(settings.auth_logging_config, disable_existing_loggers=False)
 
 
 # Task 1: Register a new user
@@ -51,10 +64,10 @@ def auth_api_test(db: sqlite3.Connection = Depends(get_db)):
 #     "roles": ["student"]
 # }
 @app.post("/register")
-def register(new_register: UserRegister, request: Request, db: sqlite3.Connection = Depends(get_db)):
+def register(new_register: UserRegister, request: Request, db: sqlite3.Connection = Depends(get_primary_db)):
 
     new_user = dict(new_register)
-    print(new_register)
+    print(db)
     
     username_exists = db.execute("""
                 SELECT *
@@ -85,14 +98,14 @@ def register(new_register: UserRegister, request: Request, db: sqlite3.Connectio
     
     return {"detail": "successfully registered"}
 
-# Task 1: Register a new user
+# Task 2: Check a user’s password
 # Example: POST http://localhost:5000/signin
 # body: {
 #     "username": "TheRealSamDoe",
 #     "password": "SamyDoeSo123!",
 # }
 @app.post("/login")
-def token_issuer(user_sign_in: UserSignIn, request: Request, db: sqlite3.Connection = Depends(get_db)):    
+def token_issuer(user_sign_in: UserSignIn, request: Request, db: sqlite3.Connection = Depends(get_secondary_db)):    
     user = dict(user_sign_in)
 
     user_info = db.execute("""

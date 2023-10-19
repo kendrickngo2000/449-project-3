@@ -8,7 +8,7 @@ data:
   retention: "10m"
   retention-monitor-interval: "1m"
 
-exec: "uvicorn --port $PORT api:app --reload"
+exec: "uvicorn --port $PORT auth_api:app --reload"
 
 http:
   addr: ":20202"

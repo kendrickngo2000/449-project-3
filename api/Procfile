@@ -1,5 +1,6 @@
 krakend: krakend run -c etc/krakend.json --port $PORT
-auth_api: uvicorn --port $PORT auth_api:app --reload
+enrollment_api: uvicorn --port $PORT enrollment_api:app --reload
+# auth_api: uvicorn --port $PORT auth_api:app --reload
 
 primary: bin/litefs mount -config etc/primary.yml
 secondary_1: bin/litefs mount -config etc/secondary_1.yml

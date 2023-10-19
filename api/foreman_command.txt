@@ -1,1 +1,1 @@
-foreman start --formation krakend=1,enrollment_api=3,auth_api=1
+foreman start --formation krakend=1,enrollment_api=3,primary=1,secondary_1=1,secondary_2=1
