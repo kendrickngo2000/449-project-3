@@ -1,0 +1,18 @@
+fuse:
+  dir: "var/secondary_1/fuse"
+  debug: false
+
+data:
+  dir: "var/secondary_1/data"
+  compress: true
+  retention: "10m"
+  retention-monitor-interval: "1m"
+
+http:
+  addr: ":20203"
+
+lease:
+  type: "static"
+  advertise-url: "http://localhost:20202"
+  hostname: "localhost"
+  candidate: false
