@@ -2,7 +2,6 @@ import os
 import sys
 import json
 import datetime
-import uuid  # Import the 'uuid' module for generating UUIDs
 
 
 def expiration_in(minutes):
@@ -13,15 +12,12 @@ def expiration_in(minutes):
 
 def generate_claims(username, roles):
     _, exp = expiration_in(20)
-    jti = f"{int(datetime.datetime.utcnow().timestamp())}_{str(uuid.uuid4())}"
-
-    print(username, roles)
 
     claims = {
         "aud": "krakend.local.gd",
         "iss": "auth.local.gd",
         "sub": username,
-        "jti": jti,
+        "jti": username,
         "roles": roles,
         "exp": int(exp.timestamp()),
     }

@@ -1,3 +1,5 @@
 krakend: krakend run -c etc/krakend.json --port $PORT
-enrollment_api: uvicorn --port $PORT enrollment_api:app --reload
 auth_api: uvicorn --port $PORT auth_api:app --reload
+enrollment_api_1: uvicorn --port $PORT enrollment_api:app --reload
+enrollment_api_2: uvicorn --port $PORT enrollment_api:app --reload
+enrollment_api_3: uvicorn --port $PORT enrollment_api:app --reload
