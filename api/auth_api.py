@@ -37,6 +37,11 @@ database_paths = [settings.auth_secondary_database_1, settings.auth_secondary_da
 # Create a cycle iterator for the database paths
 database_cycle = itertools.cycle(database_paths)
 
+def get_logger():
+    return logging.getLogger(__name__)
+
+logging.config.fileConfig(settings.auth_logging_config, disable_existing_loggers=False)
+
 # Define a function to get a database connection
 def get_primary_db():
     with contextlib.closing(sqlite3.connect(settings.auth_database)) as db:
@@ -48,12 +53,6 @@ def get_secondary_db():
     with contextlib.closing(sqlite3.connect(db_path)) as db:
         db.row_factory = sqlite3.Row
         yield db
-
-
-def get_logger():
-    return logging.getLogger(__name__)
-
-logging.config.fileConfig(settings.auth_logging_config, disable_existing_loggers=False)
 
 
 # Task 1: Register a new user
