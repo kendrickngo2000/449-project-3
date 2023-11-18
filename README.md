@@ -22,5 +22,5 @@ python -m pip install 'fastapi[all]'
 foreman start --formation krakend=1,enrollment_api=3,primary=1,secondary_1=1,secondary_2=1
 ```
 
-# 449-project 3:,
+# 449-project 3
 This project builds from project 2 by implementing of polyglot persistence, moving part of the data from Project 2 into Redis and the rest into DynamoDB Local.
