@@ -4,3 +4,4 @@ enrollment_api: uvicorn --port $PORT enrollment_api:app --reload
 primary: bin/litefs mount -config etc/primary.yml
 secondary_1: bin/litefs mount -config etc/secondary_1.yml
 secondary_2: bin/litefs mount -config etc/secondary_2.yml
+dynamodb: java -Djava.library.path=/home/student/Desktop/449-project-3/dynamodb_local_latest/DynamoDBLocal_lib -jar /home/student/Desktop/449-project-3/dynamodb_local_latest/DynamoDBLocal.jar -sharedDb -port $PORT

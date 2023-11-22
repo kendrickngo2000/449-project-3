@@ -9,6 +9,22 @@ from fastapi import FastAPI, Depends, Request, HTTPException, status
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings
 
+import redis
+import boto3
+import os
+import requests
+
+# Connects to Redis
+def get_redis():
+    return redis.Redis()
+
+
+# Creating DynamoDB instance that allows us to connect with DynamoDB service
+def get_dynamodb_client():
+    return boto3.resource(service_name = 'dynamodb', region_name = 'us-west-2', 
+                        aws_access_key_id = 'AKIAIOSFODNN7EXAMPLE', 
+                        aws_secret_access_key = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY')
+
 class Class(BaseModel):
     class_code: str
     section_number: str
@@ -78,16 +94,22 @@ def get_student_enrollment(student_username: str, db: sqlite3.Connection = Depen
 
     return {"enrollment": student_enrollment}
 
-@app.get("/waitlist")
-def get_waitlist(db: sqlite3.Connection = Depends(get_db)):
+# @app.get("/waitlist")
+# def get_waitlist(db: sqlite3.Connection = Depends(get_db)):
 
-    # Check to see if student on waitlist
-    waitlist = db.execute("""
-                SELECT *
-                FROM Waitlist
-            """).fetchall()
+#     # Check to see if student on waitlist
+#     waitlist = db.execute("""
+#                 SELECT *
+#                 FROM Waitlist
+#             """).fetchall()
     
-    return {"waitlist": waitlist}
+#     return {"waitlist": waitlist}
+
+# Project 3 - GET Waitlist using redis
+@app.get("/waitlist")
+def get_waitlist(redis_client: redis.Redis = Depends(get_redis),
+                 dynamodb_client: boto3.resource = Depends(get_dynamodb_client)):
+    print('needs work')
 
 
 # ---------------------- Tasks -----------------------------
