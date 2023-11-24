@@ -11,8 +11,12 @@ from pydantic_settings import BaseSettings
 
 import redis
 import boto3
+from boto3.dynamodb.conditions import Key
+from botocore.exceptions import ClientError
 import os
 import requests
+
+logger = logging.getLogger(__name__)
 
 # Connects to Redis
 def get_redis():
@@ -26,14 +30,111 @@ def get_dynamodb_client():
                         aws_secret_access_key = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY')
 
 class Class(BaseModel):
-    class_code: str
-    section_number: str
-    class_name: str
-    department: str
-    auto_enrollment: bool
-    max_enrollment: int
-    max_waitlist: int
-    c_instructor_username: str
+
+    def __init__(self, dyn_resource):
+        self.dyn_resource = dyn_resource
+        self.table = None
+
+    def create_table(self, table_name):
+        try:
+            self.table = self.dyn_resource.create_table(
+                TableName=table_name,
+                KeySchema=[
+                    {"AttributeName": "class_code", "KeyType": "HASH"},  # Partition key
+                    {"AttributeName": "section_number", "KeyType": "RANGE"},  # Sort key
+                ],
+                AttributeDefinitions=[
+                    {"AttributeName": "class_code", "AttributeType": "S"},
+                    {"AttributeName": "section_number", "AttributeType": "S"},
+                ],
+                ProvisionedThroughput={
+                    "ReadCapacityUnits": 10,
+                    "WriteCapacityUnits": 10,
+                },
+            )
+            self.table.wait_until_exists()
+        except ClientError as err:
+            logger.error(
+                "Couldn't create table %s. Here's why: %s: %s",
+                table_name,
+                err.response["Error"]["Code"],
+                err.response["Error"]["Message"],
+            )
+            raise
+        else:
+            return self.table
+        
+class Enroll(BaseModel):
+
+    def __init__(self, dyn_resource):
+        """
+        :param dyn_resource: A Boto3 DynamoDB resource.
+        """
+        self.dyn_resource = dyn_resource
+        self.table = None
+
+    def create_table(self, table_name):
+        try:
+            self.table = self.dyn_resource.create_table(
+                TableName=table_name,
+                KeySchema=[
+                    {"AttributeName": "e_student_username", "KeyType": "HASH"},  # Partition key
+                    {"AttributeName": "e_class_code", "KeyType": "RANGE"},  # Sort key
+                ],
+                AttributeDefinitions=[
+                    {"AttributeName": "e_student_username", "AttributeType": "S"},
+                    {"AttributeName": "e_class_code", "AttributeType": "S"},
+                ],
+                ProvisionedThroughput={
+                    "ReadCapacityUnits": 10,
+                    "WriteCapacityUnits": 10,
+                },
+            )
+            self.table.wait_until_exists()
+        except ClientError as err:
+            logger.error(
+                "Couldn't create table %s. Here's why: %s: %s",
+                table_name,
+                err.response["Error"]["Code"],
+                err.response["Error"]["Message"],
+            )
+            raise
+        else:
+            return self.table
+
+class Student(BaseModel):
+
+    def __init__(self, dyn_resource):
+        self.dyn_resource = dyn_resource
+    
+        self.table = None
+
+    def create_table(self, table_name):
+        try:
+            self.table = self.dyn_resource.create_table(
+                TableName=table_name,
+                KeySchema=[
+                    {"AttributeName": "student_username", "KeyType": "HASH"}  # Partition key
+                ],
+                AttributeDefinitions=[
+                    {"AttributeName": "student_username", "AttributeType": "S"}
+                ],
+                ProvisionedThroughput={
+                    "ReadCapacityUnits": 10,
+                    "WriteCapacityUnits": 10,
+                },
+            )
+            self.table.wait_until_exists()
+        except ClientError as err:
+            logger.error(
+                "Couldn't create table %s. Here's why: %s: %s",
+                table_name,
+                err.response["Error"]["Code"],
+                err.response["Error"]["Message"],
+            )
+            raise
+        else:
+            return self.table
 
 class Settings(BaseSettings, env_file=".env", extra="ignore"):
     enrollment_database: str
