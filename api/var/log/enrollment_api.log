@@ -1,0 +1,241 @@
+[2023-11-25 12:36:09,026] DEBUG in botocore.hooks: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[2023-11-25 12:36:09,030] DEBUG in botocore.hooks: Changing event name from before-call.apigateway to before-call.api-gateway
+[2023-11-25 12:36:09,032] DEBUG in botocore.hooks: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[2023-11-25 12:36:09,036] DEBUG in botocore.hooks: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[2023-11-25 12:36:09,037] DEBUG in botocore.hooks: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[2023-11-25 12:36:09,039] DEBUG in botocore.hooks: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[2023-11-25 12:36:09,040] DEBUG in botocore.hooks: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[2023-11-25 12:36:09,043] DEBUG in botocore.hooks: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[2023-11-25 12:36:09,044] DEBUG in botocore.hooks: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[2023-11-25 12:36:09,044] DEBUG in botocore.hooks: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[2023-11-25 12:36:09,045] DEBUG in botocore.hooks: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[2023-11-25 12:36:09,386] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/boto3/data/dynamodb/2012-08-10/resources-1.json
+[2023-11-25 12:36:09,391] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/endpoints.json
+[2023-11-25 12:36:09,424] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+[2023-11-25 12:36:09,427] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f3d8acdacb0>
+[2023-11-25 12:36:09,462] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/service-2.json.gz
+[2023-11-25 12:36:09,498] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/endpoint-rule-set-1.json.gz
+[2023-11-25 12:36:09,500] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/partitions.json
+[2023-11-25 12:36:09,502] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7f3d8ae56290>
+[2023-11-25 12:36:09,503] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_service
+[2023-11-25 12:36:09,503] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_global
+[2023-11-25 12:36:09,503] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_service
+[2023-11-25 12:36:09,504] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_global
+[2023-11-25 12:36:09,504] DEBUG in botocore.configprovider: No configured endpoint found.
+[2023-11-25 12:36:09,506] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 12:36:09,521] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/_retry.json
+[2023-11-25 12:36:09,522] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 12:36:09,523] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 12:36:09,525] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7f3d8acaa050>
+[2023-11-25 12:36:20,394] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f3d8acdacb0>
+[2023-11-25 12:36:20,395] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7f3d8ae56290>
+[2023-11-25 12:36:20,395] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_service
+[2023-11-25 12:36:20,395] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_global
+[2023-11-25 12:36:20,395] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_service
+[2023-11-25 12:36:20,395] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_global
+[2023-11-25 12:36:20,395] DEBUG in botocore.configprovider: No configured endpoint found.
+[2023-11-25 12:36:20,397] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 12:36:20,400] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 12:36:20,403] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 12:36:20,407] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7f3d8acaa050>
+[2023-11-25 15:05:58,868] DEBUG in botocore.hooks: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[2023-11-25 15:05:58,874] DEBUG in botocore.hooks: Changing event name from before-call.apigateway to before-call.api-gateway
+[2023-11-25 15:05:58,876] DEBUG in botocore.hooks: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[2023-11-25 15:05:58,879] DEBUG in botocore.hooks: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[2023-11-25 15:05:58,879] DEBUG in botocore.hooks: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[2023-11-25 15:05:58,881] DEBUG in botocore.hooks: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[2023-11-25 15:05:58,882] DEBUG in botocore.hooks: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[2023-11-25 15:05:58,887] DEBUG in botocore.hooks: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[2023-11-25 15:05:58,888] DEBUG in botocore.hooks: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[2023-11-25 15:05:58,888] DEBUG in botocore.hooks: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[2023-11-25 15:05:58,889] DEBUG in botocore.hooks: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[2023-11-25 15:05:58,912] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/boto3/data/dynamodb/2012-08-10/resources-1.json
+[2023-11-25 15:05:58,918] DEBUG in botocore.utils: IMDS ENDPOINT: http://169.254.169.254/
+[2023-11-25 15:05:58,921] DEBUG in botocore.credentials: Looking for credentials via: env
+[2023-11-25 15:05:58,921] DEBUG in botocore.credentials: Looking for credentials via: assume-role
+[2023-11-25 15:05:58,922] DEBUG in botocore.credentials: Looking for credentials via: assume-role-with-web-identity
+[2023-11-25 15:05:58,931] DEBUG in botocore.credentials: Looking for credentials via: sso
+[2023-11-25 15:05:58,931] DEBUG in botocore.credentials: Looking for credentials via: shared-credentials-file
+[2023-11-25 15:05:58,932] INFO in botocore.credentials: Found credentials in shared credentials file: ~/.aws/credentials
+[2023-11-25 15:05:58,935] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/endpoints.json
+[2023-11-25 15:05:59,012] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+[2023-11-25 15:05:59,013] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f8aa7ddacb0>
+[2023-11-25 15:05:59,058] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/service-2.json.gz
+[2023-11-25 15:05:59,095] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/endpoint-rule-set-1.json.gz
+[2023-11-25 15:05:59,096] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/partitions.json
+[2023-11-25 15:05:59,098] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7f8aa7f52290>
+[2023-11-25 15:05:59,101] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 15:05:59,103] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/_retry.json
+[2023-11-25 15:05:59,105] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 15:05:59,106] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 15:05:59,112] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7f8aa7dab0a0>
+[2023-11-25 15:05:59,418] DEBUG in botocore.hooks: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[2023-11-25 15:05:59,423] DEBUG in botocore.hooks: Changing event name from before-call.apigateway to before-call.api-gateway
+[2023-11-25 15:05:59,433] DEBUG in botocore.hooks: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[2023-11-25 15:05:59,439] DEBUG in botocore.hooks: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[2023-11-25 15:05:59,440] DEBUG in botocore.hooks: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[2023-11-25 15:05:59,441] DEBUG in botocore.hooks: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[2023-11-25 15:05:59,445] DEBUG in botocore.hooks: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[2023-11-25 15:05:59,450] DEBUG in botocore.hooks: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[2023-11-25 15:05:59,452] DEBUG in botocore.hooks: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[2023-11-25 15:05:59,453] DEBUG in botocore.hooks: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[2023-11-25 15:05:59,453] DEBUG in botocore.hooks: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[2023-11-25 15:05:59,473] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/boto3/data/dynamodb/2012-08-10/resources-1.json
+[2023-11-25 15:05:59,480] DEBUG in botocore.utils: IMDS ENDPOINT: http://169.254.169.254/
+[2023-11-25 15:05:59,485] DEBUG in botocore.credentials: Looking for credentials via: env
+[2023-11-25 15:05:59,485] DEBUG in botocore.credentials: Looking for credentials via: assume-role
+[2023-11-25 15:05:59,488] DEBUG in botocore.credentials: Looking for credentials via: assume-role-with-web-identity
+[2023-11-25 15:05:59,488] DEBUG in botocore.credentials: Looking for credentials via: sso
+[2023-11-25 15:05:59,489] DEBUG in botocore.credentials: Looking for credentials via: shared-credentials-file
+[2023-11-25 15:05:59,490] INFO in botocore.credentials: Found credentials in shared credentials file: ~/.aws/credentials
+[2023-11-25 15:05:59,499] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/endpoints.json
+[2023-11-25 15:05:59,532] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+[2023-11-25 15:05:59,534] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f0b23adacb0>
+[2023-11-25 15:05:59,565] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/service-2.json.gz
+[2023-11-25 15:05:59,591] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/endpoint-rule-set-1.json.gz
+[2023-11-25 15:05:59,594] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/partitions.json
+[2023-11-25 15:05:59,597] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7f0b23c52290>
+[2023-11-25 15:05:59,601] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 15:05:59,605] DEBUG in botocore.hooks: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[2023-11-25 15:05:59,605] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/_retry.json
+[2023-11-25 15:05:59,607] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 15:05:59,608] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 15:05:59,609] DEBUG in botocore.hooks: Changing event name from before-call.apigateway to before-call.api-gateway
+[2023-11-25 15:05:59,611] DEBUG in botocore.hooks: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[2023-11-25 15:05:59,614] DEBUG in botocore.hooks: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[2023-11-25 15:05:59,614] DEBUG in botocore.hooks: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[2023-11-25 15:05:59,614] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7f0b23aab0a0>
+[2023-11-25 15:05:59,623] DEBUG in botocore.hooks: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[2023-11-25 15:05:59,625] DEBUG in botocore.hooks: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[2023-11-25 15:05:59,642] DEBUG in botocore.hooks: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[2023-11-25 15:05:59,642] DEBUG in botocore.hooks: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[2023-11-25 15:05:59,642] DEBUG in botocore.hooks: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[2023-11-25 15:05:59,643] DEBUG in botocore.hooks: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[2023-11-25 15:05:59,664] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/boto3/data/dynamodb/2012-08-10/resources-1.json
+[2023-11-25 15:05:59,668] DEBUG in botocore.utils: IMDS ENDPOINT: http://169.254.169.254/
+[2023-11-25 15:05:59,671] DEBUG in botocore.credentials: Looking for credentials via: env
+[2023-11-25 15:05:59,672] DEBUG in botocore.credentials: Looking for credentials via: assume-role
+[2023-11-25 15:05:59,672] DEBUG in botocore.credentials: Looking for credentials via: assume-role-with-web-identity
+[2023-11-25 15:05:59,672] DEBUG in botocore.credentials: Looking for credentials via: sso
+[2023-11-25 15:05:59,672] DEBUG in botocore.credentials: Looking for credentials via: shared-credentials-file
+[2023-11-25 15:05:59,673] INFO in botocore.credentials: Found credentials in shared credentials file: ~/.aws/credentials
+[2023-11-25 15:05:59,676] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/endpoints.json
+[2023-11-25 15:05:59,703] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+[2023-11-25 15:05:59,704] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f1839dc2b90>
+[2023-11-25 15:05:59,728] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/service-2.json.gz
+[2023-11-25 15:05:59,757] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/endpoint-rule-set-1.json.gz
+[2023-11-25 15:05:59,758] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/partitions.json
+[2023-11-25 15:05:59,762] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7f1839f3a170>
+[2023-11-25 15:05:59,765] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 15:05:59,767] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/_retry.json
+[2023-11-25 15:05:59,768] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 15:05:59,769] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 15:05:59,775] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7f1839d92f80>
+[2023-11-25 15:17:31,584] DEBUG in botocore.hooks: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[2023-11-25 15:17:31,587] DEBUG in botocore.hooks: Changing event name from before-call.apigateway to before-call.api-gateway
+[2023-11-25 15:17:31,588] DEBUG in botocore.hooks: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[2023-11-25 15:17:31,589] DEBUG in botocore.hooks: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[2023-11-25 15:17:31,590] DEBUG in botocore.hooks: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[2023-11-25 15:17:31,590] DEBUG in botocore.hooks: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[2023-11-25 15:17:31,591] DEBUG in botocore.hooks: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[2023-11-25 15:17:31,593] DEBUG in botocore.hooks: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[2023-11-25 15:17:31,593] DEBUG in botocore.hooks: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[2023-11-25 15:17:31,593] DEBUG in botocore.hooks: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[2023-11-25 15:17:31,593] DEBUG in botocore.hooks: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[2023-11-25 15:17:31,595] DEBUG in botocore.hooks: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[2023-11-25 15:17:31,599] DEBUG in botocore.hooks: Changing event name from before-call.apigateway to before-call.api-gateway
+[2023-11-25 15:17:31,601] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/boto3/data/dynamodb/2012-08-10/resources-1.json
+[2023-11-25 15:17:31,602] DEBUG in botocore.hooks: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[2023-11-25 15:17:31,603] DEBUG in botocore.hooks: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[2023-11-25 15:17:31,603] DEBUG in botocore.hooks: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[2023-11-25 15:17:31,603] DEBUG in botocore.hooks: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[2023-11-25 15:17:31,604] DEBUG in botocore.hooks: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[2023-11-25 15:17:31,604] DEBUG in botocore.utils: IMDS ENDPOINT: http://169.254.169.254/
+[2023-11-25 15:17:31,605] DEBUG in botocore.hooks: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[2023-11-25 15:17:31,606] DEBUG in botocore.hooks: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[2023-11-25 15:17:31,606] DEBUG in botocore.hooks: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[2023-11-25 15:17:31,606] DEBUG in botocore.hooks: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[2023-11-25 15:17:31,605] DEBUG in botocore.credentials: Looking for credentials via: env
+[2023-11-25 15:17:31,606] DEBUG in botocore.credentials: Looking for credentials via: assume-role
+[2023-11-25 15:17:31,606] DEBUG in botocore.credentials: Looking for credentials via: assume-role-with-web-identity
+[2023-11-25 15:17:31,607] DEBUG in botocore.credentials: Looking for credentials via: sso
+[2023-11-25 15:17:31,607] DEBUG in botocore.credentials: Looking for credentials via: shared-credentials-file
+[2023-11-25 15:17:31,607] INFO in botocore.credentials: Found credentials in shared credentials file: ~/.aws/credentials
+[2023-11-25 15:17:31,608] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/endpoints.json
+[2023-11-25 15:17:31,613] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/boto3/data/dynamodb/2012-08-10/resources-1.json
+[2023-11-25 15:17:31,615] DEBUG in botocore.utils: IMDS ENDPOINT: http://169.254.169.254/
+[2023-11-25 15:17:31,617] DEBUG in botocore.credentials: Looking for credentials via: env
+[2023-11-25 15:17:31,617] DEBUG in botocore.credentials: Looking for credentials via: assume-role
+[2023-11-25 15:17:31,617] DEBUG in botocore.credentials: Looking for credentials via: assume-role-with-web-identity
+[2023-11-25 15:17:31,617] DEBUG in botocore.credentials: Looking for credentials via: sso
+[2023-11-25 15:17:31,617] DEBUG in botocore.credentials: Looking for credentials via: shared-credentials-file
+[2023-11-25 15:17:31,617] INFO in botocore.credentials: Found credentials in shared credentials file: ~/.aws/credentials
+[2023-11-25 15:17:31,618] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/endpoints.json
+[2023-11-25 15:17:31,620] DEBUG in botocore.hooks: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[2023-11-25 15:17:31,620] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+[2023-11-25 15:17:31,621] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7fe6407deb90>
+[2023-11-25 15:17:31,621] DEBUG in botocore.hooks: Changing event name from before-call.apigateway to before-call.api-gateway
+[2023-11-25 15:17:31,622] DEBUG in botocore.hooks: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[2023-11-25 15:17:31,623] DEBUG in botocore.hooks: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[2023-11-25 15:17:31,623] DEBUG in botocore.hooks: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[2023-11-25 15:17:31,623] DEBUG in botocore.hooks: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[2023-11-25 15:17:31,624] DEBUG in botocore.hooks: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[2023-11-25 15:17:31,625] DEBUG in botocore.hooks: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[2023-11-25 15:17:31,625] DEBUG in botocore.hooks: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[2023-11-25 15:17:31,626] DEBUG in botocore.hooks: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[2023-11-25 15:17:31,626] DEBUG in botocore.hooks: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[2023-11-25 15:17:31,628] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+[2023-11-25 15:17:31,628] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7fafb59b6cb0>
+[2023-11-25 15:17:31,631] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/service-2.json.gz
+[2023-11-25 15:17:31,637] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/service-2.json.gz
+[2023-11-25 15:17:31,641] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/endpoint-rule-set-1.json.gz
+[2023-11-25 15:17:31,642] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/partitions.json
+[2023-11-25 15:17:31,643] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7fe64095a170>
+[2023-11-25 15:17:31,644] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_service
+[2023-11-25 15:17:31,644] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_global
+[2023-11-25 15:17:31,645] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_service
+[2023-11-25 15:17:31,645] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_global
+[2023-11-25 15:17:31,645] DEBUG in botocore.configprovider: No configured endpoint found.
+[2023-11-25 15:17:31,646] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 15:17:31,649] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/endpoint-rule-set-1.json.gz
+[2023-11-25 15:17:31,650] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/partitions.json
+[2023-11-25 15:17:31,650] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/_retry.json
+[2023-11-25 15:17:31,650] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 15:17:31,651] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7fafb5932290>
+[2023-11-25 15:17:31,651] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 15:17:31,649] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/boto3/data/dynamodb/2012-08-10/resources-1.json
+[2023-11-25 15:17:31,651] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_service
+[2023-11-25 15:17:31,651] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_global
+[2023-11-25 15:17:31,652] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_service
+[2023-11-25 15:17:31,652] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_global
+[2023-11-25 15:17:31,652] DEBUG in botocore.configprovider: No configured endpoint found.
+[2023-11-25 15:17:31,653] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 15:17:31,654] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7fe6407b2f80>
+[2023-11-25 15:17:31,655] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/_retry.json
+[2023-11-25 15:17:31,656] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 15:17:31,657] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 15:17:31,661] DEBUG in botocore.utils: IMDS ENDPOINT: http://169.254.169.254/
+[2023-11-25 15:17:31,661] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7fafb578b0a0>
+[2023-11-25 15:17:31,663] DEBUG in botocore.credentials: Looking for credentials via: env
+[2023-11-25 15:17:31,664] DEBUG in botocore.credentials: Looking for credentials via: assume-role
+[2023-11-25 15:17:31,664] DEBUG in botocore.credentials: Looking for credentials via: assume-role-with-web-identity
+[2023-11-25 15:17:31,664] DEBUG in botocore.credentials: Looking for credentials via: sso
+[2023-11-25 15:17:31,664] DEBUG in botocore.credentials: Looking for credentials via: shared-credentials-file
+[2023-11-25 15:17:31,664] INFO in botocore.credentials: Found credentials in shared credentials file: ~/.aws/credentials
+[2023-11-25 15:17:31,665] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/endpoints.json
+[2023-11-25 15:17:31,679] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/sdk-default-configuration.json
+[2023-11-25 15:17:31,680] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7fdc05cd2cb0>
+[2023-11-25 15:17:31,692] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/service-2.json.gz
+[2023-11-25 15:17:31,706] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/dynamodb/2012-08-10/endpoint-rule-set-1.json.gz
+[2023-11-25 15:17:31,707] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/partitions.json
+[2023-11-25 15:17:31,708] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7fdc05e4e290>
+[2023-11-25 15:17:31,709] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_service
+[2023-11-25 15:17:31,709] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: environment_global
+[2023-11-25 15:17:31,709] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_service
+[2023-11-25 15:17:31,709] DEBUG in botocore.configprovider: Looking for endpoint for dynamodb via: config_global
+[2023-11-25 15:17:31,709] DEBUG in botocore.configprovider: No configured endpoint found.
+[2023-11-25 15:17:31,710] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 15:17:31,711] DEBUG in botocore.loaders: Loading JSON file: /home/student/.venv/lib/python3.10/site-packages/botocore/data/_retry.json
+[2023-11-25 15:17:31,712] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 15:17:31,712] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 15:17:31,715] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7fdc05ca30a0>
