@@ -12,6 +12,7 @@ from pydantic_settings import BaseSettings
 import redis
 import boto3
 from boto3.dynamodb.conditions import Key
+import botocore
 from botocore.exceptions import ClientError
 import os
 import requests
@@ -25,8 +26,17 @@ def get_redis():
 
 # Creating DynamoDB instance that allows us to connect with DynamoDB service
 def get_dynamodb_client():
-	dynamo_db = boto3.resource('dynamodb', endpoint_url='http://localhost:5500')
-	return dynamo_db
+    aws_access_key_id = 'AKIAIOSFODNN7EXAMPLE'
+    aws_secret_access_key = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
+
+    dynamo_db = boto3.resource(
+        'dynamodb',
+        aws_access_key_id=aws_access_key_id,
+        aws_secret_access_key=aws_secret_access_key,
+        endpoint_url='http://localhost:5500'
+    )
+
+    return dynamo_db
 
 class Class(BaseModel):
 
@@ -62,43 +72,6 @@ class Class(BaseModel):
             raise
         else:
             return self.table
-            
-dynamo_db = get_dynamodb_client()
-
-# Delete table if it already exists
-try:
-    dynamo_db.Table("enrollments").delete()
-except botocore.exceptions.ClientError:
-    pass
-
-table = dynamo_db.create_table(
-    TableName = 'enrollments',
-    KeySchema = [ 
-        {
-            'AttributeName': 'section_id',
-            'KeyType': 'HASH'
-        },
-        {
-            'AttributeName': 'student_id',
-            'KeyType': 'RANGE'
-        }
-    ],
-    AttributeDefinitions = [
-        {
-            "AttributeName": "section_id",
-            "AttributeType": "N"
-        },
-        {
-            "AttributeName": "student_id",
-            "AttributeType": "N"
-        }
-    ],
-    ProvisionedThroughput={
-        "ReadCapacityUnits": 10,
-        "WriteCapacityUnits": 10,
-    },
-)
-
         
 class Enroll(BaseModel):
 
@@ -171,6 +144,43 @@ class Student(BaseModel):
             raise
         else:
             return self.table
+            
+dynamo_db = get_dynamodb_client()
+
+# Delete table if it already exists
+try:
+    dynamo_db.Table("enrollments").delete()
+except botocore.exceptions.ClientError:
+    pass
+
+table = dynamo_db.create_table(
+    TableName = 'enrollments',
+    KeySchema = [ 
+        {
+            'AttributeName': 'section_id',
+            'KeyType': 'HASH'
+        },
+        {
+            'AttributeName': 'student_id',
+            'KeyType': 'RANGE'
+        }
+    ],
+    AttributeDefinitions = [
+        {
+            "AttributeName": "section_id",
+            "AttributeType": "N"
+        },
+        {
+            "AttributeName": "student_id",
+            "AttributeType": "N"
+        }
+    ],
+    ProvisionedThroughput={
+        "ReadCapacityUnits": 10,
+        "WriteCapacityUnits": 10,
+    },
+)
+
 
 class Settings(BaseSettings, env_file=".env", extra="ignore"):
     enrollment_database: str
@@ -198,23 +208,25 @@ def enrollment_api_test(db: sqlite3.Connection = Depends(get_db)):
 
 # Example: GET http://localhost:5000/all_classes
 @app.get("/all_classes")
-def get_available_classes(db: sqlite3.Connection = Depends(get_db)):
-    classes = db.execute("""
-                SELECT *
-                FROM Class
-            """)    
-    return {"classes": classes.fetchall()}
+def get_available_classes(dynamo_db: boto3.resource = Depends(get_dynamodb_client)):
+    response = dynamo_db.Table('enrollments').scan()
+    classes = response.get('Items', [])
 
-# Example: GET http://localhost:5000/student_details/SamDoe123
+    return {"classes": classes}
+
+# Updated get_student_details function using DynamoDB
 @app.get("/student_details/{student_username}")
-def get_student_details(student_username: str, db: sqlite3.Connection = Depends(get_db)):
+def get_student_details(student_username: str, dynamodb_client: boto3.resource = Depends(get_dynamodb_client)):
 
-    # Get student details
-    student_details = db.execute("""
-        SELECT *
-        FROM Student
-        WHERE student_username=?
-    """, (student_username,)).fetchall()[0]
+    response = dynamo_db.Table('enrollments').query(
+        KeyConditionExpression='student_username = :username',
+        ExpressionAttributeValues={
+            ':username': student_username
+        }
+    )
+
+    # Assuming the response contains the student details in DynamoDB's format
+    student_details = response.get('Items', [])[0] if response.get('Items') else {}
 
     return {"student": student_details}
 
@@ -231,42 +243,40 @@ def get_student_enrollment(student_username: str, db: sqlite3.Connection = Depen
 
     return {"enrollment": student_enrollment}
 
-# @app.get("/waitlist")
-# def get_waitlist(db: sqlite3.Connection = Depends(get_db)):
-
-#     # Check to see if student on waitlist
-#     waitlist = db.execute("""
-#                 SELECT *
-#                 FROM Waitlist
-#             """).fetchall()
-    
-#     return {"waitlist": waitlist}
 
 # Project 3 - GET Waitlist using redis
 @app.get("/waitlist")
-def get_waitlist(redis_client: redis.Redis = Depends(get_redis),
-                 dynamodb_client: boto3.resource = Depends(get_dynamodb_client)):
-    print('needs work')
+def get_waitlist(redis_client: redis.Redis = Depends(get_redis)):
+    # Example: Fetching data from Redis (assuming a list structure)
+    waitlist = redis_client.lrange("Waitlist", 0, -1)  # Fetching all elements in a list
 
+    # Process the waitlist data retrieved from Redis as needed
+    processed_waitlist = [item.decode('utf-8') for item in waitlist]
+
+    return {"waitlist": processed_waitlist}
+
+# Call the get_waitlist function
+result = get_waitlist(get_redis())
+print(result)
 
 # ---------------------- Tasks -----------------------------
 
 # Task 1: Student can list all available classes
 # Example: GET http://localhost:5000/student/available_classes
 @app.get("/student/available_classes")
-def student_get_available_classes(db: sqlite3.Connection = Depends(get_db)):    
-    classes = db.execute("""
-                SELECT class_code, section_number, class_name, i_first_name, i_last_name
-                FROM Class, Instructor
-                WHERE (
-                    SELECT Count(*)
-                    FROM Enroll
-                    WHERE class_code = e_class_code
-                    AND section_number = e_section_number
-                ) < max_enrollment
-                AND c_instructor_username = instructor_username
-            """)    
-    return {"classes": classes.fetchall()}
+def student_get_available_classes():
+    try:
+        response = dynamo_db.Table('enrollments').scan(
+            ProjectionExpression="class_code, section_number, class_name, instructor_username",
+            FilterExpression="size(enrollments) < :max_enrollment",
+            ExpressionAttributeValues={
+                ":max_enrollment": 10  # Assuming 'max_enrollment' attribute represents the maximum allowed enrollment
+            }
+        )
+        classes = response.get('Items', [])
+        return {"classes": classes}
+    except Exception as e:
+        return {"error": str(e)}
 
 # Task 2: Student can attempt to enroll in a class
 # Example: POST http://localhost:5000/student/enroll_in_class/student/SamDoe123/class/CHEM101/section/01
