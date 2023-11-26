@@ -187,17 +187,20 @@ test_data = [
     {
         'section_id': 1,
         'student_id': 101,
-        'student_name': 'John'  # Add other attributes as needed
+        'student_name': 'John',
+        'student_username': 'john'  # Add other attributes as needed
     },
     {
         'section_id': 1,
         'student_id': 102,
-        'student_name': 'Alice'
+        'student_name': 'Alice',
+        'student_username': 'alice'
     },
     {
         'section_id': 1,
         'student_id': 103,
-        'student_name': 'Matrix'
+        'student_name': 'Matrix',
+        'student_username': 'matrix'
     },
     # Add more test data items in a similar format
 ]
