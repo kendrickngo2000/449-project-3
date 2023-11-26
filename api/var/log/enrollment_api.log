@@ -563,3 +563,105 @@ b'{"Items":[],"Count":0,"ScannedCount":0}'
 [2023-11-25 18:04:39,454] DEBUG in botocore.retryhandler: No retry needed.
 [2023-11-25 18:04:39,454] DEBUG in botocore.hooks: Event after-call.dynamodb.Scan: calling handler <bound method TransformationInjector.inject_attribute_value_output of <boto3.dynamodb.transform.TransformationInjector object at 0x7f56180f0f10>>
 [2023-11-25 18:04:39,454] DEBUG in boto3.resources.action: Response: {'Items': [], 'Count': 0, 'ScannedCount': 0, 'ResponseMetadata': {'RequestId': 'f92d130b-7462-475f-a288-b2adb703ce8c', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Sun, 26 Nov 2023 02:04:39 GMT', 'x-amzn-requestid': 'f92d130b-7462-475f-a288-b2adb703ce8c', 'content-type': 'application/x-amz-json-1.0', 'x-amz-crc32': '583912891', 'content-length': '39', 'server': 'Jetty(11.0.17)'}, 'RetryAttempts': 0}}
+[2023-11-25 18:32:39,908] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f14156dec20>
+[2023-11-25 18:32:39,910] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7f141585e200>
+[2023-11-25 18:32:39,918] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 18:32:39,933] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 18:32:39,935] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 18:32:39,936] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7f1415681900>
+[2023-11-25 18:32:39,947] DEBUG in boto3.resources.factory: Loading dynamodb:Table
+[2023-11-25 18:32:39,950] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.Table: calling handler <function lazy_call.<locals>._handler at 0x7f1415681870>
+[2023-11-25 18:32:39,950] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.Table: calling handler <function lazy_call.<locals>._handler at 0x7f1415681900>
+[2023-11-25 18:32:39,951] DEBUG in boto3.resources.action: Calling dynamodb:scan with {'TableName': 'enrollments'}
+[2023-11-25 18:32:39,952] DEBUG in botocore.hooks: Event provide-client-params.dynamodb.Scan: calling handler <function copy_dynamodb_params at 0x7f1414fdac20>
+[2023-11-25 18:32:39,952] DEBUG in botocore.hooks: Event before-parameter-build.dynamodb.Scan: calling handler <bound method TransformationInjector.inject_condition_expressions of <boto3.dynamodb.transform.TransformationInjector object at 0x7f1414da9930>>
+[2023-11-25 18:32:39,966] DEBUG in botocore.hooks: Event before-parameter-build.dynamodb.Scan: calling handler <bound method TransformationInjector.inject_attribute_value_input of <boto3.dynamodb.transform.TransformationInjector object at 0x7f1414da9930>>
+[2023-11-25 18:32:39,966] DEBUG in botocore.hooks: Event before-parameter-build.dynamodb.Scan: calling handler <function generate_idempotent_uuid at 0x7f1415720430>
+[2023-11-25 18:32:39,967] DEBUG in botocore.regions: Calling endpoint provider with parameters: {'Region': 'us-west-2', 'UseDualStack': False, 'UseFIPS': False, 'Endpoint': 'http://localhost:5500'}
+[2023-11-25 18:32:39,967] DEBUG in botocore.regions: Endpoint provider result: http://localhost:5500
+[2023-11-25 18:32:39,968] DEBUG in botocore.hooks: Event before-call.dynamodb.Scan: calling handler <function add_recursion_detection_header at 0x7f14157200d0>
+[2023-11-25 18:32:39,968] DEBUG in botocore.hooks: Event before-call.dynamodb.Scan: calling handler <function inject_api_version_header_if_needed at 0x7f1415721c60>
+[2023-11-25 18:32:39,968] DEBUG in botocore.endpoint: Making request for OperationModel(name=Scan) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'X-Amz-Target': 'DynamoDB_20120810.Scan', 'Content-Type': 'application/x-amz-json-1.0', 'User-Agent': 'Boto3/1.29.1 md/Botocore#1.32.1 ua/2.0 os/linux#6.2.0-36-generic md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.32.1 Resource'}, 'body': b'{"TableName": "enrollments"}', 'url': 'http://localhost:5500/', 'context': {'client_region': 'us-west-2', 'client_config': <botocore.config.Config object at 0x7f1414d735e0>, 'has_streaming_input': False, 'auth_type': None}}
+[2023-11-25 18:32:39,969] DEBUG in botocore.hooks: Event request-created.dynamodb.Scan: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f1414d73550>>
+[2023-11-25 18:32:39,970] DEBUG in botocore.hooks: Event choose-signer.dynamodb.Scan: calling handler <function set_operation_specific_signer at 0x7f1415720310>
+[2023-11-25 18:32:39,981] DEBUG in botocore.auth: Calculating signature using v4 auth.
+[2023-11-25 18:32:39,981] DEBUG in botocore.auth: CanonicalRequest:
+POST
+/
+
+content-type:application/x-amz-json-1.0
+host:localhost:5500
+x-amz-date:20231126T023239Z
+x-amz-target:DynamoDB_20120810.Scan
+
+content-type;host;x-amz-date;x-amz-target
+ea7e4d36ada6a8cd8484f406620bf60a5122945295305e684cb08a6d014cb3de
+[2023-11-25 18:32:39,981] DEBUG in botocore.auth: StringToSign:
+AWS4-HMAC-SHA256
+20231126T023239Z
+20231126/us-west-2/dynamodb/aws4_request
+bed86d2a80600ff130154cdaebfb46909327e04e0f986eb20b13f6e8568f0bab
+[2023-11-25 18:32:39,983] DEBUG in botocore.auth: Signature:
+34defb7fbe678317bb13136ca419057fdd62ca8f9263098c315debe99091a567
+[2023-11-25 18:32:39,983] DEBUG in botocore.hooks: Event request-created.dynamodb.Scan: calling handler <function add_retry_headers at 0x7f1415722320>
+[2023-11-25 18:32:39,984] DEBUG in botocore.endpoint: Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=http://localhost:5500/, headers={'X-Amz-Target': b'DynamoDB_20120810.Scan', 'Content-Type': b'application/x-amz-json-1.0', 'User-Agent': b'Boto3/1.29.1 md/Botocore#1.32.1 ua/2.0 os/linux#6.2.0-36-generic md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.32.1 Resource', 'X-Amz-Date': b'20231126T023239Z', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20231126/us-west-2/dynamodb/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-target, Signature=34defb7fbe678317bb13136ca419057fdd62ca8f9263098c315debe99091a567', 'amz-sdk-invocation-id': b'735e4919-844a-4f57-ba1b-e66426705622', 'amz-sdk-request': b'attempt=1', 'Content-Length': '28'}>
+[2023-11-25 18:32:39,985] DEBUG in urllib3.connectionpool: Starting new HTTP connection (1): localhost:5500
+[2023-11-25 18:32:40,077] DEBUG in urllib3.connectionpool: http://localhost:5500 "POST / HTTP/1.1" 200 275
+[2023-11-25 18:32:40,078] DEBUG in botocore.parsers: Response headers: {'Date': 'Sun, 26 Nov 2023 02:32:40 GMT', 'x-amzn-RequestId': '6fe68dea-9e0d-4a13-a7b0-638f47200b26', 'Content-Type': 'application/x-amz-json-1.0', 'x-amz-crc32': '548707108', 'Content-Length': '275', 'Server': 'Jetty(11.0.17)'}
+[2023-11-25 18:32:40,079] DEBUG in botocore.parsers: Response body:
+b'{"Items":[{"section_id":{"N":"1"},"student_id":{"N":"101"},"student_name":{"S":"John"}},{"section_id":{"N":"1"},"student_id":{"N":"102"},"student_name":{"S":"Alice"}},{"section_id":{"N":"1"},"student_id":{"N":"103"},"student_name":{"S":"Matrix"}}],"Count":3,"ScannedCount":3}'
+[2023-11-25 18:32:40,080] DEBUG in botocore.hooks: Event needs-retry.dynamodb.Scan: calling handler <botocore.retryhandler.RetryHandler object at 0x7f1414da8a90>
+[2023-11-25 18:32:40,081] DEBUG in botocore.retryhandler: No retry needed.
+[2023-11-25 18:32:40,081] DEBUG in botocore.hooks: Event after-call.dynamodb.Scan: calling handler <bound method TransformationInjector.inject_attribute_value_output of <boto3.dynamodb.transform.TransformationInjector object at 0x7f1414da9930>>
+[2023-11-25 18:32:40,081] DEBUG in boto3.resources.action: Response: {'Items': [{'section_id': Decimal('1'), 'student_id': Decimal('101'), 'student_name': 'John'}, {'section_id': Decimal('1'), 'student_id': Decimal('102'), 'student_name': 'Alice'}, {'section_id': Decimal('1'), 'student_id': Decimal('103'), 'student_name': 'Matrix'}], 'Count': 3, 'ScannedCount': 3, 'ResponseMetadata': {'RequestId': '6fe68dea-9e0d-4a13-a7b0-638f47200b26', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Sun, 26 Nov 2023 02:32:40 GMT', 'x-amzn-requestid': '6fe68dea-9e0d-4a13-a7b0-638f47200b26', 'content-type': 'application/x-amz-json-1.0', 'x-amz-crc32': '548707108', 'content-length': '275', 'server': 'Jetty(11.0.17)'}, 'RetryAttempts': 0}}
+[2023-11-25 18:32:57,237] DEBUG in botocore.hooks: Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f14156dec20>
+[2023-11-25 18:32:57,238] DEBUG in botocore.hooks: Event creating-client-class.dynamodb: calling handler <function add_generate_presigned_url at 0x7f141585e200>
+[2023-11-25 18:32:57,240] DEBUG in botocore.endpoint: Setting dynamodb timeout as (60, 60)
+[2023-11-25 18:32:57,247] DEBUG in botocore.client: Registering retry handlers for service: dynamodb
+[2023-11-25 18:32:57,247] DEBUG in boto3.resources.factory: Loading dynamodb:dynamodb
+[2023-11-25 18:32:57,248] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.ServiceResource: calling handler <function lazy_call.<locals>._handler at 0x7f1415681900>
+[2023-11-25 18:32:57,251] DEBUG in boto3.resources.factory: Loading dynamodb:Table
+[2023-11-25 18:32:57,251] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.Table: calling handler <function lazy_call.<locals>._handler at 0x7f1415681870>
+[2023-11-25 18:32:57,252] DEBUG in botocore.hooks: Event creating-resource-class.dynamodb.Table: calling handler <function lazy_call.<locals>._handler at 0x7f1415681900>
+[2023-11-25 18:32:57,252] DEBUG in boto3.resources.action: Calling dynamodb:scan with {'TableName': 'enrollments'}
+[2023-11-25 18:32:57,253] DEBUG in botocore.hooks: Event provide-client-params.dynamodb.Scan: calling handler <function copy_dynamodb_params at 0x7f1414fdac20>
+[2023-11-25 18:32:57,253] DEBUG in botocore.hooks: Event before-parameter-build.dynamodb.Scan: calling handler <bound method TransformationInjector.inject_condition_expressions of <boto3.dynamodb.transform.TransformationInjector object at 0x7f1414dc5930>>
+[2023-11-25 18:32:57,253] DEBUG in botocore.hooks: Event before-parameter-build.dynamodb.Scan: calling handler <bound method TransformationInjector.inject_attribute_value_input of <boto3.dynamodb.transform.TransformationInjector object at 0x7f1414dc5930>>
+[2023-11-25 18:32:57,253] DEBUG in botocore.hooks: Event before-parameter-build.dynamodb.Scan: calling handler <function generate_idempotent_uuid at 0x7f1415720430>
+[2023-11-25 18:32:57,254] DEBUG in botocore.regions: Calling endpoint provider with parameters: {'Region': 'us-west-2', 'UseDualStack': False, 'UseFIPS': False, 'Endpoint': 'http://localhost:5500'}
+[2023-11-25 18:32:57,254] DEBUG in botocore.regions: Endpoint provider result: http://localhost:5500
+[2023-11-25 18:32:57,254] DEBUG in botocore.hooks: Event before-call.dynamodb.Scan: calling handler <function add_recursion_detection_header at 0x7f14157200d0>
+[2023-11-25 18:32:57,255] DEBUG in botocore.hooks: Event before-call.dynamodb.Scan: calling handler <function inject_api_version_header_if_needed at 0x7f1415721c60>
+[2023-11-25 18:32:57,255] DEBUG in botocore.endpoint: Making request for OperationModel(name=Scan) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'X-Amz-Target': 'DynamoDB_20120810.Scan', 'Content-Type': 'application/x-amz-json-1.0', 'User-Agent': 'Boto3/1.29.1 md/Botocore#1.32.1 ua/2.0 os/linux#6.2.0-36-generic md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.32.1 Resource'}, 'body': b'{"TableName": "enrollments"}', 'url': 'http://localhost:5500/', 'context': {'client_region': 'us-west-2', 'client_config': <botocore.config.Config object at 0x7f1414daa830>, 'has_streaming_input': False, 'auth_type': None}}
+[2023-11-25 18:32:57,255] DEBUG in botocore.hooks: Event request-created.dynamodb.Scan: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f1414dab220>>
+[2023-11-25 18:32:57,255] DEBUG in botocore.hooks: Event choose-signer.dynamodb.Scan: calling handler <function set_operation_specific_signer at 0x7f1415720310>
+[2023-11-25 18:32:57,256] DEBUG in botocore.auth: Calculating signature using v4 auth.
+[2023-11-25 18:32:57,256] DEBUG in botocore.auth: CanonicalRequest:
+POST
+/
+
+content-type:application/x-amz-json-1.0
+host:localhost:5500
+x-amz-date:20231126T023257Z
+x-amz-target:DynamoDB_20120810.Scan
+
+content-type;host;x-amz-date;x-amz-target
+ea7e4d36ada6a8cd8484f406620bf60a5122945295305e684cb08a6d014cb3de
+[2023-11-25 18:32:57,256] DEBUG in botocore.auth: StringToSign:
+AWS4-HMAC-SHA256
+20231126T023257Z
+20231126/us-west-2/dynamodb/aws4_request
+d03a4098394cae75a27731ec2f2141d83d82d027c8154333d7ccf6cc8463433d
+[2023-11-25 18:32:57,256] DEBUG in botocore.auth: Signature:
+c49b5f55b4b1baefe0847ded3f66a99c042d5ddcdeec740a91cc44d8906576b9
+[2023-11-25 18:32:57,256] DEBUG in botocore.hooks: Event request-created.dynamodb.Scan: calling handler <function add_retry_headers at 0x7f1415722320>
+[2023-11-25 18:32:57,257] DEBUG in botocore.endpoint: Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=http://localhost:5500/, headers={'X-Amz-Target': b'DynamoDB_20120810.Scan', 'Content-Type': b'application/x-amz-json-1.0', 'User-Agent': b'Boto3/1.29.1 md/Botocore#1.32.1 ua/2.0 os/linux#6.2.0-36-generic md/arch#x86_64 lang/python#3.10.12 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.32.1 Resource', 'X-Amz-Date': b'20231126T023257Z', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20231126/us-west-2/dynamodb/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-target, Signature=c49b5f55b4b1baefe0847ded3f66a99c042d5ddcdeec740a91cc44d8906576b9', 'amz-sdk-invocation-id': b'9c12c0f0-18ae-4f6b-a3a2-4eb36c2645d0', 'amz-sdk-request': b'attempt=1', 'Content-Length': '28'}>
+[2023-11-25 18:32:57,257] DEBUG in urllib3.connectionpool: Starting new HTTP connection (1): localhost:5500
+[2023-11-25 18:32:57,267] DEBUG in urllib3.connectionpool: http://localhost:5500 "POST / HTTP/1.1" 200 275
+[2023-11-25 18:32:57,268] DEBUG in botocore.parsers: Response headers: {'Date': 'Sun, 26 Nov 2023 02:32:57 GMT', 'x-amzn-RequestId': '7c7ee3a5-15fb-4b37-9fe2-095ea72ef494', 'Content-Type': 'application/x-amz-json-1.0', 'x-amz-crc32': '548707108', 'Content-Length': '275', 'Server': 'Jetty(11.0.17)'}
+[2023-11-25 18:32:57,269] DEBUG in botocore.parsers: Response body:
+b'{"Items":[{"section_id":{"N":"1"},"student_id":{"N":"101"},"student_name":{"S":"John"}},{"section_id":{"N":"1"},"student_id":{"N":"102"},"student_name":{"S":"Alice"}},{"section_id":{"N":"1"},"student_id":{"N":"103"},"student_name":{"S":"Matrix"}}],"Count":3,"ScannedCount":3}'
+[2023-11-25 18:32:57,271] DEBUG in botocore.hooks: Event needs-retry.dynamodb.Scan: calling handler <botocore.retryhandler.RetryHandler object at 0x7f1414dc4490>
+[2023-11-25 18:32:57,272] DEBUG in botocore.retryhandler: No retry needed.
+[2023-11-25 18:32:57,274] DEBUG in botocore.hooks: Event after-call.dynamodb.Scan: calling handler <bound method TransformationInjector.inject_attribute_value_output of <boto3.dynamodb.transform.TransformationInjector object at 0x7f1414dc5930>>
+[2023-11-25 18:32:57,275] DEBUG in boto3.resources.action: Response: {'Items': [{'section_id': Decimal('1'), 'student_id': Decimal('101'), 'student_name': 'John'}, {'section_id': Decimal('1'), 'student_id': Decimal('102'), 'student_name': 'Alice'}, {'section_id': Decimal('1'), 'student_id': Decimal('103'), 'student_name': 'Matrix'}], 'Count': 3, 'ScannedCount': 3, 'ResponseMetadata': {'RequestId': '7c7ee3a5-15fb-4b37-9fe2-095ea72ef494', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Sun, 26 Nov 2023 02:32:57 GMT', 'x-amzn-requestid': '7c7ee3a5-15fb-4b37-9fe2-095ea72ef494', 'content-type': 'application/x-amz-json-1.0', 'x-amz-crc32': '548707108', 'content-length': '275', 'server': 'Jetty(11.0.17)'}, 'RetryAttempts': 0}}

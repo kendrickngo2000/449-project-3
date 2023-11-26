@@ -181,6 +181,33 @@ table = dynamo_db.create_table(
     },
 )
 
+# Entering the Test Data to the enrollments table
+# Insert test data into the table
+test_data = [
+    {
+        'section_id': 1,
+        'student_id': 101,
+        'student_name': 'John'  # Add other attributes as needed
+    },
+    {
+        'section_id': 1,
+        'student_id': 102,
+        'student_name': 'Alice'
+    },
+    {
+        'section_id': 1,
+        'student_id': 103,
+        'student_name': 'Matrix'
+    },
+    # Add more test data items in a similar format
+]
+
+# Inserting test data into the 'enrollments' table
+for item in test_data:
+    dynamo_db.Table('enrollments').put_item(Item=item)
+
+print("Test data inserted successfully.")
+
 
 class Settings(BaseSettings, env_file=".env", extra="ignore"):
     enrollment_database: str
@@ -257,7 +284,7 @@ def get_waitlist(redis_client: redis.Redis = Depends(get_redis)):
 
 # Call the get_waitlist function
 result = get_waitlist(get_redis())
-print(result)
+
 
 # ---------------------- Tasks -----------------------------
 
